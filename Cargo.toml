@@ -5,8 +5,8 @@ edition = "2021"
 
 [lib]
 name = "binary_tree"
-path = "src/tree.rs"
+path = "tree.rs"
 
 [[bin]]
 name = "main"
-path = "src/main.rs"
+path = "main.rs"
