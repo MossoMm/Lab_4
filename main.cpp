@@ -7,17 +7,15 @@ using namespace std;
 
 void showHelp() {
     cout << "\n=== Commands ===" << endl;
-    cout << "PUSH <n>  - insert number n" << endl;
-    cout << "POP <n>   - remove number n" << endl;
-    cout << "FIND <n>  - search for number n" << endl;
-    cout << "PRINT     - print inorder (sorted)" << endl;
-    cout << "PRE       - print preorder" << endl;
-    cout << "POST      - print postorder" << endl;
-    cout << "SORT      - print sorted (same as PRINT)" << endl;
-    cout << "HELP      - show this help" << endl;
-    cout << "CLEAR     - clear tree" << endl;
-    cout << "EXIT      - exit program" << endl;
-    cout << "========================\n" << endl;
+    cout << "PUSH <n> - insert number n" << endl;
+    cout << "POP <n> - remove number n" << endl;
+    cout << "FIND <n> - search for number n" << endl;
+    cout << "PRINT - print inorder" << endl;
+    cout << "PRE - print preorder" << endl;
+    cout << "POST - print postorder" << endl;
+    cout << "HELP - show this help" << endl;
+    cout << "CLEAR - clear tree" << endl;
+    cout << "EXIT - exit program" << endl;
 }
 
 int main() {
@@ -32,8 +30,6 @@ int main() {
         getline(cin, line);
         
         if (line.empty()) continue;
-        
-        // Convert to uppercase for case-insensitive commands
         for (char &c : line) c = toupper(c);
         
         stringstream ss(line);
