@@ -1,6 +1,6 @@
-#include "../include/tree.h"
-#include "../include/stack.h"
-#include "../include/queue.h"
+#include "tree.h"
+#include "stack.h"
+#include "queue.h"
 #include <iostream>
 #include <string>
 #include <sstream>
