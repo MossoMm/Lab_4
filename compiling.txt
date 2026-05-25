@@ -3,3 +3,4 @@ g++ tree.cpp stack.cpp queue.cpp tests/test_google.cpp
 -lgtest -lgtest_main -pthread -o tests
 g++ tree.cpp stack.cpp queue.cpp tests/test_boost.cpp -lboost_unit_test_framework -o tests
 ./tests
+gcc -xc++ -lstdc++ -shared-libgcc main.cpp
