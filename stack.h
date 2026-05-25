@@ -14,7 +14,9 @@ private:
     
 public:
     Stack();
-    ~Stack();  
+    ~Stack();
+    int topValue() const;
+    void print(); 
     void push(int value);
     bool pop();
     bool search(int value);
