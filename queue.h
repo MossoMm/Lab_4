@@ -14,6 +14,7 @@ private:
 public:
     Queue();
     ~Queue();
+    void print();
     void enqueue(int value);
     bool dequeue();
     bool search(int value);
