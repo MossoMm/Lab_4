@@ -4,7 +4,22 @@ Stack::Stack() : top(nullptr), count(0) {}
 Stack::~Stack() {
     clear();
 }
+int Stack::topValue() const {
+    if (isEmpty()) {
+        throw "Stack is empty";
+    }
+    return top->data;
+}
 
+void Stack::print() {
+    StackNode* current = top;
+    cout << "Stack (top to bottom): ";
+    while (current) {
+        cout << current->data << " ";
+        current = current->next;
+    }
+    cout << endl;
+}
 void Stack::push(int value) {
     StackNode* newNode = new StackNode(value);
     newNode->next = top;
