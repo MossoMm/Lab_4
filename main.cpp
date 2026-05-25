@@ -54,16 +54,11 @@ int main() {
     while (true) {
         cout << "> ";
         getline(cin, line);
-        
         if (line.empty()) continue;
-        
-        // Convert to uppercase
         for (char &c : line) c = toupper(c);
-        
         stringstream ss(line);
         string structure, cmd;
         ss >> structure >> cmd;
-        
         if (structure == "EXIT" || structure == "QUIT") {
             cout << "Goodbye!" << endl;
             break;
@@ -72,7 +67,6 @@ int main() {
             showHelp();
         }
         
-        // === TREE operations ===
         else if (structure == "TREE") {
             if (cmd == "PUSH") {
                 int n;
@@ -112,7 +106,6 @@ int main() {
             }
         }
         
-        // === STACK operations ===
         else if (structure == "STACK") {
             if (cmd == "PUSH") {
                 int n;
@@ -140,18 +133,16 @@ int main() {
             }
             else if (cmd == "PRINT") {
                 cout << "Stack (top to bottom): ";
-                // Временный вывод
-                cout << "[print not implemented in this version]" << endl;
+                stack.print();
             }
             else if (cmd == "SIZE") {
                 cout << "Stack size: " << stack.size() << endl;
             }
             else {
-                cout << "Unknown stack command. Use: PUSH, POP, FIND, PRINT, SIZE" << endl;
+                cout << "Unknown stack command." << endl;
             }
         }
         
-        // === QUEUE operations ===
         else if (structure == "QUEUE") {
             if (cmd == "PUSH") {
                 int n;
@@ -185,12 +176,12 @@ int main() {
                 cout << "Queue size: " << queue.size() << endl;
             }
             else {
-                cout << "Unknown queue command. Use: PUSH, POP, FIND, PRINT, SIZE" << endl;
+                cout << "Unknown queue command." << endl;
             }
         }
         
         else {
-            cout << "Unknown structure. Use: TREE, STACK, QUEUE, or HELP" << endl;
+            cout << "Unknown structure. << endl;
         }
     }
     
