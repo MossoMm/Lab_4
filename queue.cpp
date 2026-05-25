@@ -4,6 +4,15 @@ Queue::Queue() : front(nullptr), rear(nullptr), count(0) {}
 Queue::~Queue() {
     clear();
 }
+void Queue::print() {
+    QueueNode* current = front;
+    cout << "Queue (front to rear): ";
+    while (current) {
+        cout << current->data << " ";
+        current = current->next;
+    }
+    cout << endl;
+}
 void Queue::enqueue(int value) {
     QueueNode* newNode = new QueueNode(value);
     
