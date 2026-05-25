@@ -1,4 +1,9 @@
 #include "stack.h"
+#include <iostream>
+#include <string>
+#include <sstream>
+
+using namespace std;
 StackNode::StackNode(int val) : data(val), next(nullptr) {}
 Stack::Stack() : top(nullptr), count(0) {}
 Stack::~Stack() {

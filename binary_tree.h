@@ -11,6 +11,7 @@ class BinaryTree {
 public:
     BinaryTree();
     ~BinaryTree();
+    void print(); 
     void insert(int value);
     bool search(int value);
     bool remove(int value);
@@ -20,7 +21,7 @@ public:
 private:
     TreeNode* root;
     int count;
-
+    void printRec(TreeNode* node);
     TreeNode* insertRec(TreeNode* node, int value);
     TreeNode* removeRec(TreeNode* node, int value);
     TreeNode* findMin(TreeNode* node);

@@ -1,4 +1,9 @@
 #include "queue.h"
+#include <iostream>
+#include <string>
+#include <sstream>
+
+using namespace std;
 QueueNode::QueueNode(int val) : data(val), next(nullptr) {}
 Queue::Queue() : front(nullptr), rear(nullptr), count(0) {}
 Queue::~Queue() {

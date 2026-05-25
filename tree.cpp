@@ -1,6 +1,6 @@
-#include "tree.h"
+#include "binary_tree.h"
 #include <iostream>
-
+using namespace std;
 TreeNode::TreeNode(int val) : data(val), left(nullptr), right(nullptr) {}
 
 BinaryTree::BinaryTree() : root(nullptr), count(0) {}
@@ -8,7 +8,18 @@ BinaryTree::BinaryTree() : root(nullptr), count(0) {}
 BinaryTree::~BinaryTree() {
     clear();
 }
+void BinaryTree::print() {
+    printRec(root);
+    cout << endl;
+}
 
+void BinaryTree::printRec(TreeNode* node) {
+    if (node) {
+        printRec(node->left);
+        cout << node->data << " ";
+        printRec(node->right);
+    }
+}
 void BinaryTree::insert(int value) {
     root = insertRec(root, value);
     count++;
