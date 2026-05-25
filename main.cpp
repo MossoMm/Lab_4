@@ -6,7 +6,6 @@
 using namespace std;
 
 void showHelp() {
-    cout << "\n=== Commands ===" << endl;
     cout << "PUSH <n> - insert number n" << endl;
     cout << "POP <n> - remove number n" << endl;
     cout << "FIND <n> - search for number n" << endl;
