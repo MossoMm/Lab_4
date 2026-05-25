@@ -14,7 +14,7 @@ void showHelp() {
     cout << "TREE FIND <n> - search in tree" << endl;
     cout << "TREE PRINT - print tree inorder" << endl;
     
-    cout << "\n--- Stack ---" << endl;
+    cout << "\nStack" << endl;
     cout << "STACK PUSH <n> - push to stack" << endl;
     cout << "STACK POP - pop from stack" << endl;
     cout << "STACK FIND <n> - search in stack" << endl;
@@ -170,7 +170,7 @@ int main() {
             }
             else if (cmd == "PRINT") {
                 cout << "Queue (front to rear): ";
-                cout << "[print not implemented in this version]" << endl;
+                queue.print();
             }
             else if (cmd == "SIZE") {
                 cout << "Queue size: " << queue.size() << endl;
