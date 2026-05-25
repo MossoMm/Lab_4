@@ -7,12 +7,10 @@ struct TreeNode {
     TreeNode* right;
     TreeNode(int val);
 };
-
 class BinaryTree {
 public:
     BinaryTree();
     ~BinaryTree();
-    
     void insert(int value);
     bool search(int value);
     bool remove(int value);
@@ -22,11 +20,10 @@ public:
 private:
     TreeNode* root;
     int count;
-    
+
     TreeNode* insertRec(TreeNode* node, int value);
     TreeNode* removeRec(TreeNode* node, int value);
     TreeNode* findMin(TreeNode* node);
     void clearRec(TreeNode* node);
 };
-
 #endif
