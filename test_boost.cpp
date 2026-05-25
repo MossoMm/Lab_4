@@ -1,8 +1,8 @@
 #define BOOST_TEST_MODULE DataStructuresTests
 #include <boost/test/included/unit_test.hpp>
-#include "../include/tree.h"
-#include "../include/stack.h"
-#include "../include/queue.h"
+#include "tree.h"
+#include "stack.h"
+#include "queue.h"
 
 //Tree
 
