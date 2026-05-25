@@ -20,11 +20,11 @@ void showHelp() {
     cout << "STACK FIND <n> - search in stack" << endl;
     cout << "STACK PRINT - print stack (top to bottom)" << endl;
     
-    cout << "\nQueue" << endl;
-    cout << "QUEUE PUSH <n> - enqueue" << endl;
-    cout << "QUEUE POP - dequeue" << endl;
-    cout << "QUEUE FIND <n> - search in queue" << endl;
-    cout << "QUEUE PRINT - print queue (front to rear)" << endl;
+    cout << "\n" << endl;
+    cout << "ENQUEUE <n> - enqueue" << endl;
+    cout << "DEQUEUE - dequeue" << endl;
+    cout << "QUEUEFIND <n> - search in queue" << endl;
+    cout << "QUEUEPRINT - print queue (front to rear)" << endl;
     
     cout << "\nGeneral" << endl;
     cout << "HELP - show this help" << endl;
