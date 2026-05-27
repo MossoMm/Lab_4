@@ -39,16 +39,6 @@ void showHelp() {
 
 }
 
-void printStack(Stack& s) {
-    Stack temp;
-    int value;
-    
-    while (s.size() > 0) {
-        cout << "Stack printing not fully implemented" << endl;
-        return;
-    }
-}
-
 int main() {
     BinaryTree tree;
     Stack stack;
