@@ -8,7 +8,7 @@
 using namespace std;
 
 void showHelp() {
-    cout << "\nTree (BST)" << endl;
+    cout << "\n)" << endl;
     cout << "INSERT <n>  - insert to tree" << endl;
     cout << "DELETE <n> - remove from tree" << endl;
     cout << "FIND <n> - search in tree" << endl;
