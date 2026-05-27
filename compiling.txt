@@ -1,6 +1,17 @@
+sudo apt update
+sudo apt install libgtest-dev libboost-test-dev lcov gcovr
 g++ tree.cpp stack.cpp queue.cpp main.cpp -o program
 g++ tree.cpp stack.cpp queue.cpp tests/test_google.cpp 
 -lgtest -lgtest_main -pthread -o tests
 g++ tree.cpp stack.cpp queue.cpp tests/test_boost.cpp -lboost_unit_test_framework -o tests
 ./tests
 gcc -xc++ -lstdc++ -shared-libgcc main.cpp
+g++ -std=c++17 -g --coverage tree.cpp stack.cpp queue.cpp test_google.cpp -lgtest -lgtest_main -pthread -o tests_gtest
+./tests_gtest
+g++ -std=c++17 -g --coverage tree.cpp stack.cpp queue.cpp test_boost.cpp -lboost_unit_test_framework -o tests_boost
+./tests_boost
+
+lcov --capture --directory . --output-file coverage.info
+lcov --remove coverage.info '/usr/*' --output-file coverage_filtered.info
+genhtml coverage_filtered.info --output-directory coverage_report
+xdg-open coverage_report/index.html   # открыть в браузере
