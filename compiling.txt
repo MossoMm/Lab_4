@@ -10,8 +10,27 @@ g++ -std=c++17 -g --coverage tree.cpp stack.cpp queue.cpp test_google.cpp -lgtes
 ./tests_gtest
 g++ -std=c++17 -g --coverage tree.cpp stack.cpp queue.cpp test_boost.cpp -lboost_unit_test_framework -o tests_boost
 ./tests_boost
+echo "=== Running tests ==="
+./tests_gtest.exe
+./tests_boost.exe
 
-lcov --capture --directory . --output-file coverage.info
-lcov --remove coverage.info '/usr/*' --output-file coverage_filtered.info
-genhtml coverage_filtered.info --output-directory coverage_report
-xdg-open coverage_report/index.html   # открыть в браузере
+echo "=== Generating filtered coverage report ==="
+lcov --capture --directory . --output-file coverage.info --quiet
+
+# Оставляем только ваши файлы
+lcov --extract coverage.info \
+    "*/tree.cpp" \
+    "*/stack.cpp" \
+    "*/queue.cpp" \
+    --output-file coverage_filtered.info --quiet
+
+echo ""
+echo "=== Coverage Summary ==="
+lcov --list coverage_filtered.info
+
+echo ""
+echo "=== Generating HTML ==="
+genhtml coverage_filtered.info --output-directory coverage_report --quiet
+
+echo "Done! Open coverage_report/index.html"
+start coverage_report/index.html
