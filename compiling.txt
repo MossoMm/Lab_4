@@ -1,36 +1,34 @@
 sudo apt update
 sudo apt install libgtest-dev libboost-test-dev lcov gcovr
 g++ tree.cpp stack.cpp queue.cpp main.cpp -o program
-g++ tree.cpp stack.cpp queue.cpp tests/test_google.cpp 
--lgtest -lgtest_main -pthread -o tests
-g++ tree.cpp stack.cpp queue.cpp tests/test_boost.cpp -lboost_unit_test_framework -o tests
-./tests
-gcc -xc++ -lstdc++ -shared-libgcc main.cpp
-g++ -std=c++17 -g --coverage tree.cpp stack.cpp queue.cpp test_google.cpp -lgtest -lgtest_main -pthread -o tests_gtest
-./tests_gtest
-g++ -std=c++17 -g --coverage tree.cpp stack.cpp queue.cpp test_boost.cpp -lboost_unit_test_framework -o tests_boost
-./tests_boost
-echo "=== Running tests ==="
+ g++ -std=c++17 -g --coverage \
+    tree.cpp stack.cpp queue.cpp test_boost.cpp \
+    -I/ucrt64/include \
+    -L/ucrt64/lib \
+    -lboost_unit_test_framework-mt \
+    -o tests_boost.exe
+g++ -std=c++17 -g --coverage \
+    tree.cpp stack.cpp queue.cpp test_google.cpp \
+    -I/ucrt64/include -L/ucrt64/lib \
+    -lgtest -lgtest_main -pthread \
+    -o tests_gtest.exe
+
+
+
 ./tests_gtest.exe
 ./tests_boost.exe
 
-echo "=== Generating filtered coverage report ==="
 lcov --capture --directory . --output-file coverage.info --quiet
 
-# Оставляем только ваши файлы
 lcov --extract coverage.info \
     "*/tree.cpp" \
     "*/stack.cpp" \
     "*/queue.cpp" \
     --output-file coverage_filtered.info --quiet
 
-echo ""
-echo "=== Coverage Summary ==="
 lcov --list coverage_filtered.info
 
-echo ""
-echo "=== Generating HTML ==="
+
 genhtml coverage_filtered.info --output-directory coverage_report --quiet
 
-echo "Done! Open coverage_report/index.html"
 start coverage_report/index.html
