@@ -16,7 +16,7 @@ void showHelp() {
     cout << "TREESIZE - tree size" << endl;
     cout << "TREECLEAR - clear tree" << endl;
     
-    cout << "\nStack" << endl;
+    cout << "\n" << endl;
     cout << "PUSH <n> - push to stack" << endl;
     cout << "POP - pop from stack" << endl;
     cout << "PEEK <n> - search in stack" << endl;
@@ -24,7 +24,7 @@ void showHelp() {
     cout << "STACKSIZE   - stack size" << endl;
     cout << "STACKCLEAR  - clear stack" << endl;
     
-    cout << "\nQueue" << endl;
+    cout << "\n" << endl;
     cout << "ENQUEUE <n> - enqueue to queue" << endl;
     cout << "DEQUEUE - dequeue from queue" << endl;
     cout << "FRONT <n> - search in queue" << endl;
@@ -32,7 +32,7 @@ void showHelp() {
     cout << "QUEUESIZE - queue size" << endl;
     cout << "QUEUECLEAR - clear queue" << endl;
     
-    cout << "\nGeneral" << endl;
+    cout << "\n" << endl;
     cout << "HELP - show this help" << endl;
     cout << "EXIT - exit program" << endl;
 

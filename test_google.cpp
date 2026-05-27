@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "tree.h"
+#include "binary_tree.h"
 #include "stack.h"
 #include "queue.h"
 
